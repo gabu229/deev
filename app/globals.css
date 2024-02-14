@@ -17,14 +17,43 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply bg-gray-900;
 }
+
+.editor-tab {
+  @apply px-3 py-1 min-w-[30%] min-h-[100%] text-start outline-none focus:outline-none text-xs border-l border-gray-700 hover:bg-slate-900 transition-all duration-150;
+}
+
+.active-tab {
+  @apply bg-slate-950 text-gray-300;
+}
+
+.inactive-tab {
+  @apply bg-slate-800 text-gray-400;
+}
+
+.btn-menu {
+  @apply text-xs px-3 py-1 outline-none focus:outline-none text-gray-400;
+}
+
+.btn-menu-list {
+  @apply block w-full bg-transparent hover:bg-slate-900 text-gray-400 px-3 py-2 text-sm text-start transition-all duration-100;
+}
+
+/* For WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+  @apply w-[5px];
+}
+::-webkit-scrollbar-track {
+  @apply bg-slate-400;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-700 hover:bg-slate-600;
+}
+
+/* For Firefox */
+/* scrollbar-width: thin; Width of the scrollbar */
+/* scrollbar-color: #888 #f1f1f1; Color of the scrollbar */
 
 @layer utilities {
   .text-balance {
